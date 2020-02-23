@@ -12,6 +12,7 @@ class ImageResults extends Component {
     currentImg: ""
   };
 
+  //takes in an image parameter
   handleOpen = img => {
     this.setState({ open: true, currentImg: img });
   };
@@ -37,7 +38,7 @@ class ImageResults extends Component {
                 </span>
               }
               actionIcon={
-                <IconButton>
+                <IconButton onClick={() => this.handleOpen(img.largeImageURL)}>
                   <ZoomIn color="white" />
                 </IconButton>
               }
@@ -54,13 +55,20 @@ class ImageResults extends Component {
       <FlatButton label="Close" primary={true} onClick={this.handleClose} />
     ];
     //this returns the image list
-    return <div>
-      {imageListContent}
-    
-    <Dialog
-    actions={actions}
-    
-    </div>;
+    return (
+      <div>
+        {imageListContent}
+
+        <Dialog
+          actions={actions}
+          modal={false}
+          open={this.state.open}
+          onRequestClose={this.handleClose}
+        >
+          <img src={this.state.currentImg} alt="" style={{ width: "100%" }} />
+        </Dialog>
+      </div>
+    );
   }
 }
 
