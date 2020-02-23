@@ -1,3 +1,5 @@
+This project was a starter project for learning React. For the full Lesson, view the original programmer, Traversy Media @ https://www.traversymedia.com/ or https://youtu.be/dzOrUmK4Qyw .
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
